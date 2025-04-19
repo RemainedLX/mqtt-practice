@@ -1,0 +1,15 @@
+package com.example.lx.mqtt.entity;
+
+import lombok.Data;
+
+/**
+ * @author lx
+ * @date 2025/4/19
+ * @description
+ */
+@Data
+public class LampPayload {
+    private Integer line;
+    private Integer light;
+    private String deviceId;
+}

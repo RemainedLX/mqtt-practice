@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mqtt?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  mqtt:
+    username: linxi
+    password: 123456
+    url: tcp://IP:PORT
+    subClientId: spring_sub_mqtt_client
+    subTopic: iot/lamp/line
+    pubTopic: iot/lamp/now
+    pubClientId: spring_pub_mqtt_client
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

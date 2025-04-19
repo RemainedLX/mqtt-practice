@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.lx.lamp.mapper.LampStatusMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.lx.lamp.entity.LampStatus">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="deviceId" column="device_id" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="delFlag" column="del_flag" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,device_id,status,
+        create_time,update_time,del_flag
+    </sql>
+    <update id="updateStatus">
+        update tb_lamp_status set status=#{status} where device_id=#{deviceId}
+    </update>
+</mapper>
